@@ -1,0 +1,21 @@
+-a (or) --app
+
+$ heroku addons:create jawsdb --app eatdaburger00
+Creating jawsdb on eatdaburger00... free
+Database is being provisioned. Your config_var will be set automatically once available.
+Created jawsdb-cylindrical-29146 as JAWSDB_JADE_URL
+Use heroku addons:docs jawsdb to view documentation
+
+$ heroku config:get JAWSDB_URL --app eatdaburger00
+mysql://y942delyyv3ravu3:f33ip21u2gvv2jtn@t89yihg12rw77y6f.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/txtyyh8t8yp0ilyj
+
+$ heroku config -s -a eatdaburger00 | grep JAWSDB_URL >> .env
+
+$ cat .env
+JAWSDB_URL='mysql://y942delyyv3ravu3:f33ip21u2gvv2jtn@t89yihg12rw77y6f.cbetxkdyhwsb.us-east-1.rds.amazonaws.com:3306/txtyyh8t8yp0ilyj'
+
+
+
+$ heroku config:set NODE_MODULES_CACHE=false -a eatdaburger00
+Setting NODE_MODULES_CACHE and restarting eatdaburger00... done, v16
+NODE_MODULES_CACHE: false
